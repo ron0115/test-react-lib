@@ -26,7 +26,8 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook -o .out && echo 'ron0115.best' > .out/CNAME",
+    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=.out"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -40,6 +41,7 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^5.3.19",
     "@storybook/source-loader": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
