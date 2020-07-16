@@ -6,8 +6,7 @@ module.exports = ({ config, mode }) => {
     loader: require.resolve('babel-loader'),
     options: {
       presets: [['react-app', { flow: false, typescript: true }]]
-    },
-    exclude: /node_modules/
+    }
   })
 
   config.module.rules.push({
@@ -19,8 +18,7 @@ module.exports = ({ config, mode }) => {
       }
     ],
     enforce: 'pre',
-    include: path.resolve(__dirname, '../src'),
-    exclude: /node_modules/
+    exclude: [/node_modules/, '/example/']
   })
 
   config.resolve.extensions.push('.ts', '.tsx')
